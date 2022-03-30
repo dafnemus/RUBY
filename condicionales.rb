@@ -14,3 +14,14 @@ if is_authenticated
 else
   puts 'Not authenticated, send to Login'
 end
+
+role = :admin
+
+case role
+when :admin
+  puts 'Welcome Admin'
+when :superadmin
+  puts 'Welcome Super Admin'
+else
+  puts 'Welcome user'
+end

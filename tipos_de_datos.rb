@@ -26,7 +26,7 @@ puts "#{cadena} esta vacia #{cadena.empty?}"
 puts "cadena original: #{cadena}, cadena nueva: #{cadena.gsub('Mundo', 'Planeta')}"
 puts "#{cadena} palabra en la posición 1 #{cadena[1]}"
 puts "#{cadena} multiplicada #{cadena * 3}"
-puts "concatenación #{cadena} + Nuevo = #{cadena + 'Nuevo'}"
+puts "concatenación #{cadena} + Nuevo = #{"#{cadena}Nuevo"}"
 puts "#{cadena} ahora es un array #{cadena.split('')}"
 
 # Symbols
@@ -42,4 +42,25 @@ puts "El primer elemento de #{array} es #{array.first}"
 puts "El último elemento de #{array} es #{array.last}"
 puts "#{array} contiene #{array.count { |elem| elem == 3 }}, 3"
 puts "#{array} cada elemento * 2 #{array.map { |elem| elem * 2 }}"
-puts "numeros impares #{array.select { |elem| elem.odd? }} dentro de #{array}"
+puts "numeros impares #{array.select(&:odd?)} dentro de #{array}"
+puts "El numero más grande dentro de #{array} es #{array.max}"
+puts "El numero más chico dentro de #{array} es #{array.min}"
+puts "Los elementos dentro del #{array} suman en total: #{array.sum}"
+puts "original: #{array}, ordenado #{array.sort}"
+
+# HASH
+capitales = {
+  'Peru' => 'Lima',
+  'España' => 'Madrid',
+  'Argentina' => 'Buenos aires',
+  'Paises Bajos' => 'Amsterdan',
+  'Estados_Unidos' => 'Washington'
+}
+
+puts "#{capitales} es de clase #{capitales.class}"
+puts "#{capitales} contiene #{capitales.size} elementos"
+puts "#{capitales} tiene a Madrid como valor #{capitales.value? 'Madrid'}"
+puts "#{capitales} tiene a Madrid como key #{capitales.key? 'Madrid'}"
+puts "original #{capitales}, keys y values invertidos #{capitales.invert}"
+puts "valores transformados #{capitales.transform_values(&:downcase)}"
+puts "Listado de capitales #{capitales.map { |k, v| "#{k} = #{v} \n" }}"
