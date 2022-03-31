@@ -64,3 +64,14 @@ puts "#{capitales} tiene a Madrid como key #{capitales.key? 'Madrid'}"
 puts "original #{capitales}, keys y values invertidos #{capitales.invert}"
 puts "valores transformados #{capitales.transform_values(&:downcase)}"
 puts "Listado de capitales #{capitales.map { |k, v| "#{k} = #{v} \n" }}"
+
+# Rangos: true
+# .. = rango inclusivo
+# ... = excluye el último elemento del rango
+
+rango_numerico = (1..10)
+rango_letras = ('a'..'d')
+
+puts "#{rango_numerico} es de clase #{rango_numerico.class}"
+puts "#{rango_numerico} ahora es una array #{rango_numerico.to_a}"
+puts "#{rango_letras} como array #{rango_letras.to_a}"
